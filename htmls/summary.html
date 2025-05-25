@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join</title>
+    <link rel="stylesheet" href="../css/summary.css" />
+    <link rel="stylesheet" href="/css/mediaSummary.css">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../styleResponsive.css">
+    <script src="../scripts/auxiliaryFunction.js"></script>
+    <script src="../scripts/database.js"></script>
+    <script src="../scripts/componentLoader.js" defer></script>
+    <script src="../assets/templates/summaryTemplats.js"></script>
+    <script src="../script.js"></script>
+    <script src="../scripts/summaryFunctions.js"></script>
+    <script src="../scripts/user.js"></script>
+    <script src="../scripts/singup.js"></script>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/assets/img/Logo for Favicon .png"
+    />
+    <link
+      rel="shortcut icon"
+      href="/assets/img/Logo for Favicon .png"
+      type="image/x-icon"
+    />
+  </head>
+  <body onload="initsummary()">
+    <div class="container">
+      <div w3-include-html="sideBar.html" id="sidebar"></div>
+        
+      <div class="main-content">     
+      
+      <header w3-include-html="header.html" id="header"></header>
+        <div class="content-container">
+          <div class="content">
+             <div id="hello-container" class="hello-container">
+              <span class="greeting-time" id="greeting-time"></span>
+              <span class="greeting-name" id="greeting-name"></span>
+            </div>
+            <div id="headline-overview" class="headline-overview d-none">
+              <div class="headline">
+                <h1>Join 375</h1>
+                <div class="blue-line-desktop"></div>
+                <p>Key Metrics at a Glance</p>
+              </div>
+              <div class="blue-line-mobile"></div>
+            </div>
+            <article class="overview-container d-none" id="overview">
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

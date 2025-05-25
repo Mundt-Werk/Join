@@ -1,0 +1,93 @@
+@media (min-width: 1280px) {
+  .big-page-task-containers {
+    display: flex;
+    justify-content: space-around;
+    gap: 8px;
+  }
+
+  .todo-area {
+    display: flex;
+    flex-direction: column;
+    min-width: 252px;
+  }
+
+  .task-container-filed {
+    flex-direction: column;
+    overflow: visible;
+    height: 100svh;
+  }
+
+  .board-container img {
+    width: 160px;
+    height: 48px;
+  }
+
+  #headTaskButtonDesktop {
+    display: block;
+  }
+
+  #headTaskButtonMobil {
+    display: none;
+  }
+
+  h2 {
+    font-size: 20px;
+    color: #42526e;
+  }
+
+  .todo-container img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .input-group {
+    display: none;
+  }
+
+  .input-field {
+    width: 40%;
+  }
+
+  .input-field-big {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    background-color: var(--white);
+  }
+
+  .separater {
+    height: 100%;
+    width: 2px;
+    background-color: grey;
+  }
+}
+
+@media (max-width: 510px){
+  .open-task-delete-edit-container {
+    margin: 0;
+}
+}
+
+@media (min-height: 1080px){
+  .assigned-to-container {
+    height: 300px;
+  }
+}
+
+@media (min-height: 1040px){
+  .assigned-to-container {
+    height: 250px;
+  }
+}
+
+@media (max-height: 780px){
+  .assigned-to-container {
+    height: 100px;
+  }
+}
+
+

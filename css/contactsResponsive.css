@@ -1,0 +1,256 @@
+@media (min-width: 1024px) {
+    .contact-form .cancel-button {
+        display: flex !important;
+    }
+
+    .cancel-button:hover img {
+        content: url('../assets/img/icons/contacts/x-hover.png');
+    }
+
+    .edit-contact-btn:hover img {
+        content: url('../assets/img/icons/contacts/edit\ contacts-hover.png');
+    }
+
+    .delete-contact-btn:hover img {
+        content: url('../assets/img/icons/contacts/Delete\ contact-hover.png');
+    }
+
+    .fixed-button {
+        display: none;
+    }
+
+    .add-new-contact-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 18px 55px;
+        background-color: var(--bluegrey);
+        color: var(--white);
+        font-size: 21px;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        width: auto;
+    }
+    
+    .contact-info-header button {
+        display: none;
+    }
+
+    .add-new-contact-btn img {
+        margin-left: 16px;
+    }
+
+    .button-big {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 22px 52px 0;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .contact-container {
+        width: 40%;
+        overflow-y: scroll;
+        box-shadow: 1px 0px 16px rgba(0, 0, 0, 0.2);
+        z-index: 50; 
+    }
+
+    .contacts-list {
+        width: auto;
+        padding: 0 20px;
+    }
+
+    .contact-info-container {
+        display: block !important;
+        width: 60%;
+        height: 100%;
+        background-color: var(--backgroundcolor);
+        position: static;
+    }
+
+    .contact-info-header {
+        width: 100%;
+        background-color: var(--backgroundcolor);
+        padding: 40px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .contact-info-header p {
+        font-size: 27px;
+    }
+
+    .contact-info h1 {
+        font-size: 61px;
+        font-weight: bold;
+    }
+
+    .contact-info p {
+        font-size: 27px;
+        color: var(--bluegrey);
+    }
+
+    .circle {
+        margin: 0 40px 0 14px;
+    }
+
+    .blue-line {
+        width: 2px;
+        height: 59px;
+        background-color: var(--glow-blue);
+    }
+
+    #cancelButton {
+        display: block;
+    }
+
+    .name-picture {
+        margin: 0;
+    }
+
+    .name-and-edit button {
+        display: block;
+    }
+
+    .name-and-edit-buttons {
+        display: flex;
+    }
+
+    .hidden {
+        transform: translateX(100%);
+        transition: transform 0.5s ease;
+        display: none;
+    }
+
+    .show {
+        transform: translateX(0);
+        display: block;
+    }
+
+    .close-button {
+        color: var(--bluegrey);
+    }
+
+    #contact-avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 4px solid var(--white);
+        background-color: var(--orange);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+        font-size: 48px;
+        font-weight: bold;
+    }
+
+    .name-picture {
+        display: flex;
+        align-items: center;
+        padding: 0 28px;
+    }
+
+    #contact-name {
+        font-size: 47px;
+        font-weight: 500;
+        padding: 8px;
+    }
+
+    .name-and-edit img {
+        margin-right: 16px;
+    }
+
+    .contacts-info-headline {
+        padding: 40px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .contacts-mail {
+        padding: 0 40px;
+        margin-bottom: 22px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .contacts-mail p {
+        margin-top: 15px;
+        color: var(--glow-blue);
+        font-weight: normal;
+    }
+
+    .contacts-phone {
+        padding: 0 40px;
+        margin-bottom: 15px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .contacts-phone p {
+        margin-top: 15px;
+        font-weight: normal;
+    }
+
+    .contact-avatar {
+        align-items: center;
+        margin: 40px;
+    }
+
+    .contact-form .cancel-button {
+        display: flex;
+        background-color: var(--white);
+        border: solid 2px var(--bluegrey);
+        color: var(--bluegrey);
+        cursor: pointer;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-size: 16px;
+        align-items: center;
+        gap: 8px;
+        font-size: 20px;
+    }
+
+    .selected-contact {
+        background-color: var(--bluegrey);
+        color: var(--white);
+    }
+    
+    .selected-contact:hover {
+        background-color: var(--bluegrey);
+        cursor: default;
+    }
+
+    .back-button {
+        display: none;
+    }
+
+    /* Scrollbar Styling für WebKit-basierte Browser */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: var(--backgroundcolor);
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--bluegrey);
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--glow-blue);
+    }
+
+    /* Für Firefox */
+    .scroll-container {
+        scrollbar-width: thin;
+        scrollbar-color: var(--bluegrey) var(--backgroundcolor);
+    }
+}

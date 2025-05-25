@@ -1,0 +1,247 @@
+@media (max-width: 410px) {
+    .priority-button-container .priority-button {
+        padding: 10px 4px;
+        font-size: 14px;
+    }
+
+    .priority-button-container .priority-button svg {
+        height: 10px;
+    }
+}
+
+@media (max-width: 430px) {
+    .form-footer {
+        padding: 12px 20px;
+    }
+
+    .form-footer .footer-text p {
+        display: none;
+    }
+
+    .footer-buttons {
+        display: flex;
+        justify-content: center !important;
+        align-items: center;
+    }
+
+    .cancel-btn {
+        padding: 10px 16px !important;
+        font-size: 16px !important;
+    }
+
+    .create-task-btn {
+        padding: 10px 16px !important;
+        font-size: 16px !important;
+    }
+}
+
+@media (min-width: 448px) {
+
+
+    .alert-box {
+        min-width: 350px;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-footer {
+        padding: 12px 20px;
+    }
+
+    .cancel-btn {
+        padding: 10px 16px !important;
+        font-size: 16px !important;
+    }
+
+    .create-task-btn {
+        padding: 10px 16px !important;
+        font-size: 16px !important;
+    }
+}
+
+@media (max-width: 610px) {
+    .priority-button-container {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 800px) {
+    .overlay-container {
+        align-items: center;
+    }
+}
+
+@media (min-width: 800px) {
+    .task-page {
+        height: calc(100svh - 80px);
+        display: flex;
+        justify-content: center;
+    }
+
+    .task-content-wrapper {
+        overflow-y: unset;
+    }
+
+    .reset-button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .task-content-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .dropdown-list.show {
+        padding: 0 4px 16px;
+
+    }
+
+    .desktop-view,
+    .mobile-view {
+        width: 45%;
+    }
+
+    .vertical-divider {
+        width: 1px;
+        height: 200px;
+        margin: 16px 0 0;
+
+        display: block;
+        background-color: var(--accent-color-gray);
+    }
+
+    .subtask-container-desktop {
+        max-height: 100px;
+        overflow-y: auto;
+    }
+
+    .alert-box {
+        position: absolute;
+    }
+
+    .mandatory-notice {
+        font-size: 12.8px;
+
+    }
+
+    .d-none {
+        display: none;
+    }
+}
+
+@media (min-width: 960px) {
+    #overlaycontainer h2 {
+        font-size: 30.4px;
+    }
+
+    .form-label,
+    .priority-button {
+        font-size: 16px;
+    }
+
+    .mandatory-notice {
+        font-size: 14.4px;
+    }
+
+    .task-action-buttons {
+        width: 250px;
+    }
+
+    .reset-button,
+    .create-task-button {
+        width: 120px;
+        font-size: 16px;
+    }
+
+    .reset-button {
+        padding: 10px 12px;
+        width: fit-content;
+    }
+}
+
+@media (min-width: 960px) {
+    #overlaycontainer h2 {
+        margin-left: 8px;
+        font-size: 32px;
+
+    }
+
+    .task-content-wrapper {
+        height: 70%;
+    }
+
+    .form-label {
+        font-size: 19.2px;
+    }
+
+    #overlaycontainer input::placeholder,
+    textarea::placeholder,
+    .dropdown-menu {
+        font-size: 16px;
+    }
+
+    .contact-list,
+    .category-list {
+        top: 60px;
+    }
+
+    .contact-list li,
+    .category-list li,
+    .add-new-contact {
+        font-size: 16px;
+    }
+
+    .mandatory-notice {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 961px) {
+    .overlay-container .task-container {
+        width: 90%;
+        height: 95vh;
+    }
+
+    .overlay-container .task-container h2 {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 1081px) {
+    .overlay-container .task-container {
+        width: 90%;
+    }
+}
+
+@media (min-width: 1120px) {
+    .task-container h2 {
+        font-size: 48px;
+        margin-top: 50px;
+        margin-bottom: 10px;
+        position: relative;
+        color: #000000;
+        left: -320px;
+    }
+}
+
+@media (max-width: 1120px) {
+    .priority-button {
+        padding: 12px 4px;
+
+    }
+}
+
+@media (max-width: 1236px) {
+    .overlay-container .task-container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 1442px) {
+    .overlay-container .task-container {
+        width: 90%;
+    }
+}

@@ -1,0 +1,22 @@
+.moblie-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  z-index: 990;
+}
+
+.switch-buttons {
+  height: 32px;
+  width: 32px;
+  border-radius: 60%;
+  color: var(--glow-blue);
+  background-color: var(--white);
+  border: solid 1px var(--glow-blue);
+}
+
+.switch-buttons:hover {
+  background-color: var(--background-color-lightgray);
+}
+
+

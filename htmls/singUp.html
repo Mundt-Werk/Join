@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join</title>
+    <link rel="icon" type="image/x-icon" href="../assets/img/Logo for Favicon .png" />
+    <link rel="stylesheet" href="../css/singup.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../styleResponsive.css" />
+    <link rel="stylesheet" href="../css/confirmationDialog.css">
+    <script src="../scripts/database.js"></script>
+    <script src="../scripts/user.js"></script>
+    <script src="../scripts/singup.js" defer></script>
+    <link rel="shortcut icon" href="../assets/img/Logo for Favicon .png" type="image/x-icon" />
+  </head>
+
+  <body onload="initSignUp()">
+    <header class="header-index">
+      <img class="header-img" src="/assets/img/Logo for Favicon .png" alt="Logo" />
+    </header>
+    <div class="login-container-area">
+      <section class="login-container">
+        <div class="singup-container">
+          <img
+            onclick="redirectToLogIn()"
+            class="cursor-pointer"
+            src="/assets/img/icons/arrow-left-line.png"
+            alt="Back to Login"
+          />
+          <div class="headline">
+            <h1>Sign up</h1>
+            <div class="blue-line"></div>
+          </div>
+        </div>
+        <form class="formular-container" onsubmit="return validatePasswords(event)">
+          <!-- Name Input -->
+          <div class="input-group">
+            <input
+              id="name"
+              class="input cursor-pointer"
+              type="text"
+              placeholder="Name"
+              onblur="validateName()" 
+              oninput="validateName()" 
+            />
+            <span class="input-icon" onclick="autofillFields()">
+              <img src="../assets/img/icons/contacts/person2.png" alt="Autofill" />
+            </span>
+          </div>
+          <div id="wrongNameMessage" style="display: none;">
+            <p>Please enter a valid name</p>
+          </div>
+
+          <!-- Email Input -->
+          <div class="input-group">
+            <input
+              id="email"
+              class="input cursor-pointer"
+              type="email"
+              placeholder="Email"
+              onblur="validateEmailField()"
+              oninput="validateEmailField()"
+            />
+            <span class="input-icon" onclick="autofillFields()">
+              <img src="../assets/img/icons/mail.png" alt="Autofill" />
+            </span>
+          </div>
+          <div id="wrongMailMessage" style="display: none;">
+            <p>Please enter a valid email</p>
+          </div>
+
+          <!-- Password Input -->
+          <div class="input-group">
+            <input
+              id="password"
+              class="input cursor-pointer"
+              type="password"
+              placeholder="Password"
+              onblur="validatePasswordField()"
+              oninput="validatePasswordField()"
+            />
+            <span onclick="showPassword()" class="input-icon cursor-pointer">
+              <img id="lock-img-1" src="../assets/img/icons/lock.png" alt="Show Password" />
+            </span>
+          </div>
+          <div id="wrongPasswortMessage" style="display: none;">
+            <p>Password must be at least 6 characters long</p>
+          </div>
+
+          <!-- Confirm Password Input -->
+          <div class="input-group">
+            <input
+              id="confirm-password"
+              class="input cursor-pointer"
+              type="password"
+              placeholder="Verify Password"
+              onblur="validateConfirmPasswordField()"
+              oninput="validateConfirmPasswordField()"
+            />
+            <span onclick="showPassword2()" class="input-icon cursor-pointer">
+              <img id="lock-img-2" src="../assets/img/icons/lock.png" alt="Show Password" />
+            </span>
+          </div>
+          <div id="password-dont-match" style="display: none;">
+            <p>Passwords do not match</p>
+          </div>
+
+          <!-- Privacy Checkbox -->
+           <div class="remember-container">
+            <div >
+              <input
+                id="remember"
+                type="checkbox"
+                onchange="validateForm()"
+              />
+              <label for="remember">
+                <span>I accept the</span>
+                <a class="decoration-none" href="privacyPoliceSignIn.html">Privacy policy</a>
+                <span class="red">*</span>
+              </label>
+            </div>
+            <div>
+              <span class="acceptPrivacyPolice">* Accept the Privacy policy to continue!</span>
+            </div>
+           </div>
+          <!-- Submit Button -->
+          <button id="signupButton" class="blue-button cursor-pointer disabled" disabled>
+            Sign up
+          </button>
+        </form>
+      </section>
+    </div>
+    <div id="confirmation-modal" class="confirmation-modal hidden">
+      <div class="wellcome-to-join-modal">
+          <div class="wellcome-to-join-headline">
+              <h2>Registration successful!</h2>
+          </div>
+          <div class="wellcome-to-join">
+            <p>Welcome to Join 🎉<br>We are excited to have you onboard.</p>
+          </div>
+      </div>
+    </div>
+    <div id="confirmation-modal2" class="confirmation-modal hidden">
+      <div class="confirmation-dialog">
+          <div class="wellcome-to-join-headline">
+              <h2>This email address is already registered!</h2>
+          </div>
+          <div class="wellcome-to-join">
+              <p>
+                You're already part of the Join family! If you need help accessing your account, feel free to contact our support team.
+              </p>
+          </div>
+          <div class="confirmation-dialog-buttons">
+              <div>
+                  <button id="white-button" class="white-button" type="button" onclick="closeConfirmationModal2()">
+                      Cancel
+                  </button>
+              </div>                         
+          </div>
+      </div>
+    </div>
+    <div class="links-container">
+      <a class="blue-link" href="privacyPoliceSignIn.html">Privacy Policy</a>
+      <a class="blue-link" href="legalNoticeSignIn.html">Legal notice</a>
+    </div>
+  </body>
+</html>

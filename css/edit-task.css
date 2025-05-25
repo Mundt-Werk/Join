@@ -1,0 +1,150 @@
+.edit-task-head {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.edit-task-container {
+  overflow-y: scroll;
+  height: 85%;
+}
+
+/* Scrollbar styling for general usage */
+*::-webkit-scrollbar {
+  width: 0;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--background-color-lightgray);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--bluegrey);
+  border: var(--accent-color-white) 3px solid;
+  border-radius: 10px;
+}
+
+.edit-task-assigned-to-container {
+  display: flex;
+  flex-direction: row;
+}
+
+#editTitle {
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  padding: 8px 16px;
+}
+
+#editDescription {
+  width: 100%;
+  height: 88px;
+  margin-top: 10px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+#editDate {
+  width: 100%;
+  border-radius: 8px;
+  height: 40px;
+  font-size: 16px;
+  padding: 16px;
+  border: solid 1px grey;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.priority-button {
+  width: auto;
+}
+
+.save-edit-task {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.editButtons {
+  background-color: #f9f9f9;
+}
+
+.subtask-controll-buttons-edit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.disable{
+    cursor: not-allowed;
+}
+
+.subtask-controll-buttons-edit button {
+  background-color: var(--white);
+  height: 18px;
+  width: 16px;
+}
+
+.subtask-controll-buttons-edit img {
+  height: 16px;
+  width: 16px;
+}
+
+.subtask-edit-container {
+  width: 99%;
+  padding: 4px 4.8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  background-color: var(--accent-color-white);
+  border: var(--accent-color-gray) 1px solid;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.subtask-edit-container input {
+  flex: 1;
+  border: none;
+}
+
+.contact-edit-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  font-size: 14px;
+  list-style-type: disc;
+  list-style-position: inside;
+  border-radius: 4px;
+  background-color: var(--accent-color-white);
+  cursor: pointer;
+  width: 100%;
+}
+
+.selected {
+  background-color: #2a3647;
+  color: white;
+  margin-bottom: 5px;
+    background-color: #2A3647 !important;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.subtask-buttons-edit {
+  display: flex;
+  gap: 10px;
+}
+
+.subtask-edit img,
+.subtask-delete img {
+  width: 12px;
+  height: 12px;
+}
+
+.li-in-subtaks {
+  cursor: unset;
+}

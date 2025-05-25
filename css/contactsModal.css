@@ -1,0 +1,125 @@
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color 0.5s ease;
+}
+
+.modal.show {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal-content {
+    height: 82vh;
+    background-color: white;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    text-align: center;
+    animation-duration: 0.5s;
+}
+
+.modal-head {
+    border-radius: 20px 20px 0 0;
+    background-color: var(--bluegrey);
+    height: 40%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 16px;
+}
+
+.modal-head img {
+    display: none;
+}
+
+.modal-head h2 {
+    font-size: 47px;
+    color: var(--white);
+}
+
+.modal-head p {
+    font-size: 20px;
+    color: var(--white);
+    margin-top: 16px;
+}
+
+.blue-line-modal {
+    margin-top: 16px;
+    width: 25%;
+    height: 2px;
+    background-color: var(--glow-blue);
+}
+
+.close-button {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    font-size: 32px;
+    cursor: pointer;
+    color: var(--white);
+}
+
+.contact-avatar {
+    margin: -60px;
+}
+
+.modal-submit-buttons {
+    gap: 16px;
+}
+
+@media (min-width: 1024px){
+    .modal-content {
+        height: 60vh;
+        max-width: 1200px;
+        display: flex;
+        align-items: center;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.5s ease;
+    }
+
+    .modal-head {
+        height: 100%;
+        width: 467px;
+        border-radius: 20px 0 0 20px;
+        padding-left: 40px;
+    }
+
+    .modal-head img {
+        display: block;
+        margin-bottom: 16px;
+    }
+
+    .blue-line-big-modal {
+        margin-top: 16px;
+        width: 80px;
+        height: 3px;
+        background-color: var(--glow-blue);
+    }
+
+    .modal-bottom {
+        width: 480px;
+    }
+
+    .modal-submit-buttons {
+        display: flex;
+        gap: 16px;
+    }
+
+}

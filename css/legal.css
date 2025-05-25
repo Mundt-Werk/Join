@@ -1,0 +1,28 @@
+ul {
+    padding: 16px 16px 0 16px;
+}
+
+.spacer {
+    display: block; 
+    height: 10px;   
+}
+
+.spacer2 {
+    display: block; 
+    height: 16px;   
+}
+
+.spacer3 {
+    display: block; 
+    height: 24px;  
+}
+
+.number-container {
+    display: flex;
+}
+
+.number-container-task {
+    display: flex;
+    flex-direction: column;
+    margin-left: 35px;
+}

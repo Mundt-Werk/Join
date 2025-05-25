@@ -1,0 +1,405 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'inter';
+}
+
+@font-face {
+    font-family: 'inter';
+    src: url(../assets/font/inter/Inter-VariableFont_slnt,wght.ttf);
+}
+
+:root {
+    --accent-color-red: #ff3d00;
+    --backgroundcolor: #f0f0f0;
+    --black: #000000;
+    --blue: #6E52FF;
+    --bluegrey: #2A3647;
+    --categorie-blue: #0038FF;
+    --categorie-cyan: #1FD7C1;
+    --categorie-violet: #6E52FF;
+    --coral: #FF4646;
+    --cyan: #00BEE8;
+    --dark-blue: #091931;
+    --dark-purple: #462F8A;
+    --email-blue: #007CEE;
+    --glow-blue: #29ABE2;
+    --green: #2cb950;
+    --grey: #CDCDCD;
+    --hover-blue: #2a3d59;
+    --orange: #FF7A00;
+    --pink: #FC71FF;
+    --purple: #9327FF;
+    --turquoise: #1FD7C1;
+    --white: #ffffff;
+    --yellow: #FFBB2B;
+    --background-color-darkblue: #2a3647;
+    --background-color-lightgray: #f0f0f0;
+    --background-color-mediumgray: #ECECEC;
+    --accent-color-lightblue: #29abe2;
+    --accent-color-white: #ffffff;
+    --accent-color-black: #000000;
+    --accent-color-anthracite: #333333;
+    --accent-color-darkgray: #b9b9b9;
+    --accent-color-gray: #d6d6d6;
+    --accent-color-red-asterisk: #FF8190;
+    --accent-color-green: #7AE229;
+    --shadow-color: #00000033;
+    --color-default: #6e52ff;
+    --color-variant2: #ffa35e;
+    --header-height: 80px;
+}
+
+.category-userstory {
+    background-color: var(--categorie-blue);
+}
+
+.category-design {
+    background-color: var(--categorie-violet);
+}
+
+.category-technical {
+    background-color: var(--categorie-cyan);
+}
+
+img {
+    background-color: transparent !important;
+}
+
+.d-none {
+    display: none !important;
+}
+
+body,
+html {
+    height: 100%;
+    font-family: 'inter';
+    font-size: 16px;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 47px;
+}
+
+h2 {
+    font-size: 27px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100svh;
+    width: 100%;
+}
+
+.sidebar {
+    width: 100%;
+    height: 80px;
+    background-color: var(--bluegrey);
+}
+
+.logo-big,
+.footer-links {
+    display: none;
+}
+
+nav {
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+}
+
+.menu-items,
+.footer-links a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--grey);
+    text-decoration: none;
+}
+
+.menu-items p {
+    margin: 0;
+}
+
+.menu-items:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100svh;
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--white);
+    padding: 20px;
+    height: 80px;
+    width: 100vw;
+    box-shadow: 0px 1px 16px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+header img {
+    margin-left: 16px;
+}
+
+head img:hover {
+    opacity: 0.2;
+}
+
+header h3 {
+    color: black;
+    text-transform: none;
+}
+
+#profile-picture:hover {
+    filter: brightness(0.95);
+}
+
+.header-big {
+    display: none;
+}
+
+.content {
+    overflow-y: auto;
+    height: 100vh;
+    scrollbar-width: none;
+    background-color: var(--backgroundcolor);
+}
+
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+.highlighted-link {
+    background-color: var(--dark-blue);
+}
+
+.profile-container {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-container:hover {
+    cursor: pointer;
+}
+
+#dropdown-menu {
+    position: absolute;
+    top: 72px;
+    right: -150px;
+    width: 150px;
+    background-color: var(--bluegrey);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 10px;
+    border-radius: 25px 0 25px 25px;
+    opacity: 0;
+    transition: all 0.8s ease;
+    visibility: hidden;
+}
+
+#dropdown-menu.open {
+    right: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+#dropdown-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--grey);
+}
+
+#dropdown-menu a:hover {
+    background-color: var(--hover-blue);
+}
+
+#help-icon {
+    display: none;
+}
+
+/* ====================================
+   Gobal Cursor Effekt
+==================================== */
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* ====================================
+   Gobal ein und ausblenden
+==================================== */
+
+.hidden {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}
+
+/* ====================================
+   Gobale Button
+==================================== */
+.white-button {
+    background: white !important;
+    color: #2a3647 !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    padding: 16px 24px !important;
+    border-radius: 8px !important;
+    border: solid 1px #2a3647 !important;
+}
+
+.white-button:hover {
+    background-color: var(--white) !important;
+    color: var(--glow-blue) !important;
+    border: 1px solid var(--glow-blue) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.blue-button {
+    background: #2a3647 !important;
+    color: white !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    padding: 16px 24px !important;
+    border-radius: 8px !important;
+    border-style: unset !important;
+}
+
+.blue-button:hover {
+    background-color: var(--glow-blue) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.blue-line {
+    height: 0px;
+    width: 88px;
+    border: solid 2px var(--glow-blue);
+}
+
+.headline {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* ====================================
+   Gobale Hover Effekte
+==================================== */
+
+.blue-link:hover {
+    color: var(--glow-blue);
+    font-weight: 700;
+}
+
+.contact-form .blue-boarder-button:hover {
+    background-color: var(--white);
+    color: var(--glow-blue);
+    border: 1px solid var(--glow-blue);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+hr {
+    height: 2px;
+    width: 100%;
+    border: none;
+    background-color: grey;
+    opacity: 0.2;
+}
+
+button {
+    border: unset;
+    cursor: pointer;
+}
+
+.menu-items:hover {
+    background-color: var(--hover-blue);
+    color: var(--white);
+}
+
+.menu-items.active {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    border: solid 10px var(--dark-blue);
+    border-radius: 16px;
+}
+
+.menu-items.active img {
+    filter: brightness(0) invert(1);
+}
+
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+#wrongMailMessage,
+#wrongNameMessage,
+#wrongPasswortMessage,
+#password-dont-match,
+#generalErrorMessage {
+    display: none;
+    width: 100%;
+    margin-top: -40px;
+    margin-bottom: 8px;
+    margin-left: 24px;
+    color: red;
+}
+
+#wrongMailMessage p,
+#wrongNameMessage p,
+#wrongPasswortMessage p,
+#password-dont-match p,
+#generalErrorMessage p {
+    display: flex;
+    justify-content: flex-start !important;
+    font-size: 10px;
+}
+
+.acceptPrivacyPolice {
+    color: red !important;
+    font-size: 10px !important;
+}
+
+.profile-initials {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: solid 2px var(--dark-blue);
+    color: var(--glow-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+.profile-initials:hover {
+    background-color: var(--background-color-lightgray);
+  }

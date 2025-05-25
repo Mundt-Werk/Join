@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="/assets/img/Logo for Favicon .png" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../styleResponsive.css">
+  <link rel="stylesheet" href="../css/contacts.css" />
+  <link rel="stylesheet" href="../css/confirmationDialog.css">
+  <link rel="stylesheet" href="../css/board.css" />
+  <link rel="stylesheet" href="../css/boardResponsive.css" />
+  <link rel="stylesheet" href="../css/open-task.css">
+  <link rel="stylesheet" href="../css/boardMobileButtons.css">
+  <link rel="stylesheet" href="../css/addTask-board.css" />
+  <link rel="stylesheet" href="../css/addtask-board-subtask.css">
+  <link rel="stylesheet" href="../css/addTask-board-responsive.css">
+  <link rel="stylesheet" href="../css/edit-task.css">
+  <title>Task Board</title>
+</head>
+
+<body onload="loadTasksToBoard()">
+  <!-- Full Page Container -->
+  <div class="container">
+    <div w3-include-html="sideBar.html" id="sidebar"></div>
+
+    <div class="main-content">
+      <header w3-include-html="header.html" id="header"></header>
+      <div class="content">
+        <!-- Board Titel -->
+        <div class="board-container">
+          <h1>Board</h1>
+
+
+          <div class="find-and-add-task">
+            <div class="input-field-big">
+              <input id="name-big" type="text" placeholder="Find Task" required oninput="filterTasks()" />
+              <span class="input-icon">
+                <img src="../assets/img/icons/board/search.png" alt="Search Icon" />
+              </span>
+            </div>
+
+            <img onclick="openAddTaskModal('To-do')" id="headTaskButtonMobil"
+              src="../assets/img/icons/board/plus add task mobile.png" alt="Add Task" />
+            <img onclick="openAddTaskModal('To-do')" id="headTaskButtonDesktop"
+              src="../assets/img/icons/board/plus add task desktop.png" alt="Add Task">
+
+          </div>
+
+        </div>
+
+        <!-- No search results message -->
+        <div id="noResultsMessage" style="display: none;">Keinen Task gefunden</div>
+
+        <div class="input-group">
+          <input id="name" type="text" placeholder="Find Task" required oninput="filterTasks()">
+          <button type="button" class="input-icon">
+            <img src="../assets/img/icons/board/search.png" alt="Search Icon">
+          </button>
+        </div>
+
+        <!-- Task Containers -->
+        <div class="big-page-task-containers">
+          <!-- To Do Area -->
+          <div id="toDoArea" class="todo-area">
+            <div class="todo-container">
+              <h2>To do</h2>
+              <img class="cursor-pointer" onclick="openAddTaskModal('To-do')"
+                src="../assets/img/icons/board/plus button mobile.png" alt="Add Task" />
+            </div>
+            <div id="toDoTasks" class="task-container-filed" ondrop="moveTo('To-do')" ondragover="allowDrop(event)"
+              ondragenter="highlight('toDoTasks')" ondragleave="removeHighlight('toDoTasks')">
+            </div>
+          </div>
+
+          <!-- In Progress Area -->
+          <div id="inProgressArea" class="todo-area">
+            <div class="todo-container">
+              <h2>In progress</h2>
+              <img class="cursor-pointer" onclick="openAddTaskModal('In progress')"
+                src="../assets/img/icons/board/plus button mobile.png" alt="Add Task" />
+            </div>
+            <div id="inProgressTasks" class="task-container-filed" ondrop="moveTo('In progress')"
+              ondragover="allowDrop(event)" ondragenter="highlight('inProgressTasks')"
+              ondragleave="removeHighlight('inProgressTasks')">
+            </div>
+          </div>
+
+          <!-- Await Feedback Area -->
+          <div id="awaitingFeedbackArea" class="todo-area">
+            <div class="todo-container">
+              <h2>Awaiting feedback</h2>
+              <img class="cursor-pointer" onclick="openAddTaskModal('Awaiting feedback')"
+                src="../assets/img/icons/board/plus button mobile.png" alt="Add Task" />
+            </div>
+            <div id="awaitingFeedbackTasks" class="task-container-filed" ondrop="moveTo('Awaiting feedback')"
+              ondragover="allowDrop(event)" ondragenter="highlight('awaitingFeedbackTasks')"
+              ondragleave="removeHighlight('awaitingFeedbackTasks')">
+            </div>
+          </div>
+
+          <!-- Done Area -->
+          <div id="doneArea" class="todo-area">
+            <div class="todo-container">
+              <h2>Done</h2>
+            </div>
+            <div id="doneTasks" class="task-container-filed" ondrop="moveTo('Done')" ondragover="allowDrop(event)"
+              ondragenter="highlight('doneTasks')" ondragleave="removeHighlight('doneTasks')">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="taskoverlaycontainer" class="task-overlay-container d-none">
+  </div>
+
+  <!-- Open Task Overlay (Modal) -->
+  <div onload="initAddTask()" id="overlaycontainer" class="overlay-container d-none">
+    <div class="task-container">
+      <div id="successMessage" class="success-message d-none">
+        <img src="../assets/img/add-task/Added to back log V1.svg" alt="Added to back log" />
+      </div>
+      <h2 id="add_task_h1">Add Task</h2>
+      <div class="task-content-wrapper" onclick="event.stopPropagation()">
+        <div class="mobile-view">
+          <section>
+            <label for="task_title_input" class="form-label">Task Title<span class="mandatory">*</span></label>
+            <input onkeyup="checkInputTitlel()" required id="task_title_input" type="text" class="task-title-input"
+              placeholder="Enter task title" />
+            <span id="task_title_error" class="error-message d-none">Please enter a task title.</span>
+          </section>
+          <section>
+            <label for="task_description_input" class="form-label">Task Description</label>
+            <textarea name="task_description_input" id="task_description_input" placeholder="Enter task description"
+              cols="30" rows="8"></textarea>
+          </section>
+
+          <section class="assign-container">
+            <div class="form-label">Assign to</div>
+            <div class="dropdown-menu5" id="contact_dropdown_toggle_button" onclick="toggleContactDropdown()">
+              Select contacts<img id="arrow_icon_contacts" class="dropdown-arrow-icon"
+                src="../assets/img/add-task/arrow_drop_down.svg" />
+            </div>
+            <ul id="contact_dropdown" class="contact-list dropdown-list"></ul>
+            <div id="assigned_contacts_container" class="assigned-contacts"></div>
+          </section>
+          <section id="selected_contacts" class="selected-contacts-container"></section>
+
+          <section id="subtask_container_mobile" class="subtask-container subtask-container-mobile"></section>
+        </div>
+        <div class="vertical-divider"></div>
+        <div id="desktop_view" class="desktop-view">
+          <section id="due_date_section_desktop">
+            <label class="form-label" for="task_due_date_desktop">Due Date<span class="mandatory">*</span></label>
+            <input onchange="checkDate()" required id="task_due_date_desktop" name="task_due_date_desktop"
+              id="clear-due-date" class="task-due-date" type="date" placeholder="dd/mm/yyyy" />
+            <span id="due_date_error" class="error-message d-none">Please select a due date.</span>
+          </section>
+          <section id="priority_section_desktop" class="priority-section">
+            <div class="form-label">Priority</div>
+            <div id="priority_button_container_desktop" class="priority-button-container">
+              <button id="btn1" id="priority_button_urgent_desktop" onclick="setPriority('urgent')"
+                class="priority-button">
+                Urgent
+                <svg class="svg-urgent" width="21" height="15" viewBox="0 0 21 15" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M19.5712 14.7547C19.3366 14.7551 19.1081 14.6803 18.9192 14.5412L10.6671 8.458L2.41508 14.5412C2.29923 14.6267 2.16765 14.6887 2.02785 14.7234C1.88805 14.7582 1.74277 14.7651 1.6003 14.7437C1.45783 14.7223 1.32097 14.6732 1.19752 14.599C1.07408 14.5247 0.966466 14.427 0.880837 14.3112C0.795208 14.1954 0.733236 14.0639 0.698459 13.9243C0.663683 13.7846 0.656782 13.6394 0.678153 13.497C0.721312 13.2095 0.877002 12.9509 1.11097 12.7781L10.0151 6.20761C10.2038 6.06802 10.4324 5.99268 10.6671 5.99268C10.9019 5.99268 11.1305 6.06802 11.3192 6.20761L20.2233 12.7781C20.4092 12.915 20.5471 13.1071 20.6173 13.327C20.6874 13.5469 20.6862 13.7833 20.6139 14.0025C20.5416 14.2216 20.4019 14.4124 20.2146 14.5475C20.0274 14.6826 19.8022 14.7551 19.5712 14.7547Z"
+                    fill="#FF3D00" />
+                  <path
+                    d="M19.5713 9.00568C19.3366 9.00609 19.1081 8.93124 18.9192 8.79214L10.6671 2.70898L2.41509 8.79214C2.18112 8.96495 1.88803 9.0378 1.6003 8.99468C1.31257 8.95155 1.05378 8.79597 0.880842 8.56218C0.707906 8.32838 0.634998 8.03551 0.678157 7.74799C0.721316 7.46048 0.877007 7.20187 1.11098 7.02906L10.0151 0.458588C10.2038 0.318997 10.4324 0.243652 10.6671 0.243652C10.9019 0.243652 11.1305 0.318997 11.3192 0.458588L20.2233 7.02906C20.4092 7.16598 20.5471 7.35809 20.6173 7.57797C20.6874 7.79785 20.6863 8.03426 20.6139 8.25344C20.5416 8.47262 20.4019 8.66338 20.2146 8.79847C20.0274 8.93356 19.8022 9.00608 19.5713 9.00568Z"
+                    fill="#FF3D00" />
+                </svg>
+              </button>
+              <button id="btn2" id="priority_button_medium_desktop" onclick="setPriority('medium')"
+                class="priority-button priority-marked-medium active">
+                Medium
+                <svg class="svg-medium" width="18" height="8" viewBox="0 0 18 8" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M16.5685 7.16658L1.43151 7.16658C1.18446 7.16658 0.947523 7.06773 0.772832 6.89177C0.598141 6.71581 0.5 6.47716 0.5 6.22831C0.5 5.97947 0.598141 5.74081 0.772832 5.56485C0.947523 5.38889 1.18446 5.29004 1.43151 5.29004L16.5685 5.29004C16.8155 5.29004 17.0525 5.38889 17.2272 5.56485C17.4019 5.74081 17.5 5.97947 17.5 6.22831C17.5 6.47716 17.4019 6.71581 17.2272 6.89177C17.0525 7.06773 16.8155 7.16658 16.5685 7.16658Z"
+                    fill="#FFA800" />
+                  <path
+                    d="M16.5685 2.7098L1.43151 2.7098C1.18446 2.7098 0.947523 2.61094 0.772832 2.43498C0.598141 2.25902 0.5 2.02037 0.5 1.77152C0.5 1.52268 0.598141 1.28403 0.772832 1.10807C0.947523 0.932105 1.18446 0.833252 1.43151 0.833252L16.5685 0.833252C16.8155 0.833252 17.0525 0.932105 17.2272 1.10807C17.4019 1.28403 17.5 1.52268 17.5 1.77152C17.5 2.02037 17.4019 2.25902 17.2272 2.43498C17.0525 2.61094 16.8155 2.7098 16.5685 2.7098Z"
+                    fill="#FFA800" />
+                </svg>
+              </button>
+              <button id="btn3" id="priority_button_low_desktop" onclick="setPriority('low')" class="priority-button">
+                Low
+                <svg class="svg-low" width="21" height="15" viewBox="0 0 21 15" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M10.334 9.00589C10.0994 9.0063 9.87085 8.93145 9.682 8.79238L0.778897 2.22264C0.663059 2.13708 0.565219 2.02957 0.490964 1.90623C0.416709 1.78289 0.367492 1.64614 0.346125 1.50379C0.30297 1.21631 0.37587 0.923473 0.548786 0.689701C0.721702 0.455928 0.980471 0.300371 1.26817 0.257248C1.55586 0.214126 1.84891 0.286972 2.08286 0.45976L10.334 6.54224L18.5851 0.45976C18.7009 0.374204 18.8325 0.312285 18.9723 0.277538C19.1121 0.242791 19.2574 0.235896 19.3998 0.257248C19.5423 0.2786 19.6791 0.32778 19.8025 0.401981C19.926 0.476181 20.0336 0.573948 20.1192 0.689701C20.2048 0.805453 20.2668 0.936923 20.3015 1.07661C20.3363 1.21629 20.3432 1.36145 20.3218 1.50379C20.3005 1.64614 20.2513 1.78289 20.177 1.90623C20.1027 2.02957 20.0049 2.13708 19.8891 2.22264L10.986 8.79238C10.7971 8.93145 10.5686 9.0063 10.334 9.00589Z"
+                    fill="#7AE229" />
+                  <path
+                    d="M10.334 14.7544C10.0994 14.7548 9.87085 14.68 9.682 14.5409L0.778897 7.97117C0.544952 7.79839 0.389279 7.53981 0.346125 7.25233C0.30297 6.96485 0.37587 6.67201 0.548786 6.43824C0.721702 6.20446 0.980471 6.04891 1.26817 6.00578C1.55586 5.96266 1.84891 6.03551 2.08286 6.2083L10.334 12.2908L18.5851 6.2083C18.8191 6.03551 19.1121 5.96266 19.3998 6.00578C19.6875 6.04891 19.9463 6.20446 20.1192 6.43824C20.2921 6.67201 20.365 6.96485 20.3218 7.25233C20.2787 7.53981 20.123 7.79839 19.8891 7.97117L10.986 14.5409C10.7971 14.68 10.5686 14.7548 10.334 14.7544Z"
+                    fill="#7AE229" />
+                </svg>
+              </button>
+            </div>
+          </section>
+          <section id="category_section_desktop" class="category-section">
+            <div class="form-label">
+              Category<span class="mandatory">*</span>
+            </div>
+            <div id="category_dropdown_trigger_desktop" class="dropdown-menu5" onclick="toggleDropdown()">
+              <div id="selected_category_desktop" class="dropdown-text">
+                Select category
+              </div>
+              <div class="dropdown-arrow">
+                <img id="category_arrow_icon_desktop" class="dropdown-arrow-icon"
+                  src="../assets/img/add-task/arrow_drop_down.svg" />
+              </div>
+            </div>
+            <div>
+              <span id="category_error" class="error-message d-none">Please select a category.</span>
+            </div>
+            <ul id="category_dropdown_desktop" class="category-list dropdown-list"></ul>
+          </section>
+          <section>
+            <div class="form-label">Subtasks</div>
+            <div id="subtask_input_wrapper_desktop" class="subtask-input-wrapper">
+              <input onkeyup="checkSubtaskInput()" id="subtask_input_desktop" id="clear-subtask" type="text"
+                placeholder="Add new subtask" />
+              <div id="subtask_controls_desktop" class="subtask-controls">
+                <div id="subtask_action_wrapper_desktop" class="subtask-action-wrapper d-none">
+                  <button onclick="clearSubtask()" class="check-subtask-button">
+                    <img id="subtask_cancel_desktop" class="cancel-subtask" src="../assets/img/add-task/close.svg" />
+                  </button>
+                  <div class="subtask-divider"></div>
+                  <button onclick="addSubtask()" id="checkSubtaskButton" class="check-subtask-button">
+                    <img id="subtask_check_desktop" class="check-subtask" src="../assets/img/add-task/checkBlack.svg" />
+                  </button>
+                </div>
+                <img id="subtask_add_icon_desktop" src="../assets/img/add-task/plus.svg" />
+              </div>
+            </div>
+            <span id="errorMessageSubtaskInput" class="warning-message hiddenErrorSubtask">
+              Please enter at least 3 characters.
+            </span>
+            <div class="before-subtask">
+              <ul id="subtask_list_desktop" class="subtask-list"></ul>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="form-footer">
+        <div class="footer-button-text"></div>
+        <div class="footer-text">
+          <p class="required-message">
+            <span style="color: red">*</span>This field is required
+          </p>
+        </div>
+
+        <div class="footer-buttons">
+          <button onclick="clearTask()" type="button" class="cancel-btn white-button">
+            Clear &times;
+          </button>
+          <button id="checkTaskButtonBoard" onclick="checkValidationInBoard(event)" type="button"
+            class="create-task-btn blue-button">
+            Create Task <img src="../assets/img/add-task/check.svg" alt="" />
+          </button>
+        </div>
+        <button id="closeOverlay" class="close-button" onclick="closeAddTaskModal()">&times;
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="confirmation-modal" class="confirmation-modal hidden">
+    <div class="confirmation-dialog">
+      <div class="confirmation-dialog-headline">
+        <h2>Delete Task?</h2>
+      </div>
+      <div class="confirmation-dialog-question">
+        <p>Do you really want to delete this task?</p>
+      </div>
+      <div class="confirmation-dialog-buttons">
+        <div>
+          <button class="white-button" type="button" onclick="closeConfirmationModal()">Cancel</button>
+        </div>
+        <div>
+          <button class="red-button" type="button" onclick="confirmDeleteTask()">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Javascript -->
+  <script src="../assets/templates/taskEditTemplats.js"></script>
+  <script src="../scripts/taskEdit.js"></script>
+  <script src="../scripts/auxiliaryFunction.js"></script>
+  <script src="../scripts/database.js"></script>
+  <script src="../assets/templates/boardtemplats.js"></script>
+  <script src="../scripts/board.js"></script>
+  <script src="../scripts/componentLoader.js"></script>
+  <script src="../script.js"></script>
+  <script src="../scripts/addTask-board.js"></script>
+  <script src="../scripts/ValidateTask.js"></script>
+  <script src="../scripts/subtask.js"></script>
+  <script src="../scripts/dragAndDrop.js"></script>
+  <!-- <a href="https://www.flaticon.com/free-icons/delete" title="delete icons">Delete icons created by Ilham Fitrotul Hayat - Flaticon</a> -->
+  <!-- <a href="https://www.flaticon.com/free-icons/pencil" title="pencil icons">Pencil icons created by Pixel perfect - Flaticon</a> -->
+</body>
+
+</html>

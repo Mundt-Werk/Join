@@ -1,0 +1,406 @@
+.name-and-edit button,
+#cancelButton,
+.modal,
+.moadl-head img,
+.button-big,
+.contact-info-container {
+    display: none;
+}
+
+.contacts-list,
+.contact,
+#contact-avatar,
+.circle,
+.name-picture,
+.contact-details,
+.fixed-button,
+.modal-head,
+.contact-avatar,
+.avatar-container,
+.contact-form,
+.input-group,
+.contact-form button,
+.contact-info-container-headline,
+.modal-submit-buttons,
+.smart-edit-button-menu,
+.smart-edit-button-menu-container {
+    display: flex;
+}
+
+#contact-avatar,
+.circle,
+.contact-details,
+.fixed-button,
+.modal,
+.modal-head,
+.contact-avatar,
+.avatar-container,
+.contact-form button,
+.smart-edit-button-menu-container,
+.smart-edit-button-menu {
+    justify-content: center;
+}
+
+.contacts-list,
+.contact,
+#contact-avatar,
+.circle,
+.name-picture,
+.fixed-button,
+.modal,
+.avatar-container,
+.contact-form,
+.input-group,
+.contact-form button,
+.contact-form .cancel-button,
+.contact-form .delete-button,
+.smart-edit-button-menu-container,
+.smart-edit-button-menu {
+    align-items: center;
+}
+
+.contacts-list {
+    flex-direction: column;
+    padding: 40px;
+    width: 100%;
+}
+
+.letter-section {
+    text-align: start;
+    font-size: 24px;
+    font-weight: normal;
+    padding: 25px;
+    width: 100%;
+}
+
+.contact {
+    justify-content: flex-start;
+    width: 100%;
+    padding: 15px 0;
+    border-radius: 16px;
+}
+
+.contact:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+#contact-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    color: var(--white);
+    font-weight: 500;
+    padding: 20px;
+    font-size: 26px;
+    border: 4px solid var(--white);
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--white);
+    font-weight: 300;
+    margin: 0 16px 0 0;
+    padding: 20px;
+    font-size: 12px;
+}
+
+.name-picture {
+    margin-top: 32px;
+}
+
+.name-and-edit h2 {
+    font-size: 40px;
+}
+
+.contacts-info-headline {
+    margin-top: 16px;
+    font-size: 24px;
+}
+
+.contacts-mail {
+    margin-top: 16px;
+}
+
+.contact-details {
+    flex-direction: column;
+    text-align: left;
+    gap: 8px;
+}
+
+.contact-name {
+    font-weight: normal;
+    font-size: 20px;
+}
+
+#contact-email,
+.contact-email {
+    color: var(--email-blue);
+    font-size: 16px;
+}
+
+#contact-email:hover {
+    cursor: pointer;
+}
+
+.fixed-button {
+    position: fixed;
+    bottom: 112px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--bluegrey);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.fixed-button:hover {
+    background-color: var(--dark-purple);
+}
+
+.blue-line {
+    margin-top: 16px;
+    width: 25%;
+    height: 2px;
+    background-color: var(--glow-blue);
+}
+
+.avatar-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid var(--white);
+    padding: 60px;
+    background-color: var(--grey);
+}
+
+.contact-avatar img {
+    box-sizing: content-box;
+}
+
+.contact-form {
+    margin-top: 72px;
+    padding: 16px;
+    flex-direction: column;
+}
+
+.input-group {
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    width: 100%;
+    padding: 4px;
+    margin-bottom: 16px;
+}
+
+.input-icon {
+    margin-right: 10px;
+}
+
+.input-icon img {
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+}
+
+.container input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    outline: none;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.contact-form input::placeholder {
+    color: var(--grey);
+    padding: 16px 8px;
+    font-size: 22px;
+    opacity: 0.8;
+}
+
+.contact-form button {
+    display: none;
+    width: auto;
+    padding: 16px;
+    margin-top: 16px;
+    background-color: #091931;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 21px;
+    font-family: 'inter';
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-form button img {
+    margin-left: 8px;
+}
+
+.contact-form button:hover {
+    background-color: var(--glow-blue);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .cancel-button,
+.contact-form .delete-button {
+    background-color: var(--white);
+    border: solid 2px var(--bluegrey);
+    color: var(--bluegrey);
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 8px;
+    gap: 8px;
+}
+
+.contact-form .cancel-button {
+    display: none !important;
+    font-size: 16px;
+}
+
+.contact-form .delete-button {
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.contact-form .delete-button:hover {
+    background-color: var(--white);
+    color: var(--glow-blue);
+    border: 1px solid var(--glow-blue);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info-container {
+    position: absolute;
+    top: calc(0px + 80px);
+    bottom: calc(0px + 80px);
+    background-color: var(--backgroundcolor);
+    width: 100%;
+    padding: 40px 16px;
+}
+
+.contact-info-header p {
+    font-size: 21px;
+}
+
+.contact-info-container-headline {
+    justify-content: space-between;
+}
+
+.contact-info-content p {
+    margin-top: 16px;
+}
+
+.contact-info-content h4 {
+    margin-top: 16px;
+}
+
+.contact-info-container.show {
+    display: block;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--white);
+    z-index: 9999;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.back-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #007BFF;
+    cursor: pointer;
+}
+
+.contact-info-header {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+}
+
+.contact-info-header h1 {
+    grid-row: 1;
+}
+
+.contact-info-header p {
+    grid-row: 2;
+}
+
+.contact-info-header .blue-line {
+    grid-row: 3;
+}
+
+.selected-contact {
+    background-color: var(--backgroundcolor);
+    color: black;
+}
+
+.selected-contact:hover {
+    background-color: var(--bluegrey);
+    cursor: default;
+}
+
+.selected-circle {
+    border: solid 2px var(--white);
+}
+
+.smart-edit-button-menu-container {
+    background-color: var(--backgroundcolor);
+    height: 100px;
+    padding: 16px 24px;
+    border-radius: 16px 16px 0 16px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.smart-edit-button-menu {
+    position: fixed;
+    bottom: 112px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--bluegrey);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#wrongMailMessage, #wrongNameMessage, #wrongNumberMessage {
+    display: none;
+    width: 100%;
+    margin-top: -10px;
+    margin-bottom: 8px;
+    margin-left: 24px;
+    color: red;
+}
+
+#wrongMailMessage p, #wrongNameMessage p, #wrongNumberMessage p {
+    display: flex;
+    justify-content: flex-start !important;
+    font-size: 10px;
+}
+
+.contact-form button.create-button:disabled {
+    background-color: var(--grey) !important; 
+    color: var(--white) !important;          
+    cursor: not-allowed !important;          
+    box-shadow: none !important;             
+}
+
+.contact-form button.create-button:disabled:hover {
+    background-color: var(--grey) !important; 
+}
