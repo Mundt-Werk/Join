@@ -26,7 +26,7 @@ Ein voll funktionsfähiges Projektmanagement-Tool im Kanban-Stil mit Firebase-In
 
 ## 📸 Vorschau
 
-![Join Screenshot](img/join.png)
+![Join Screenshot](./assets/img/join.png)
 
 ---
 
