@@ -4,19 +4,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/x-icon" href="/assets/img/Logo for Favicon .png" />
-  <link rel="stylesheet" href="../style.css" />
-  <link rel="stylesheet" href="../styleResponsive.css">
-  <link rel="stylesheet" href="../css/contacts.css" />
-  <link rel="stylesheet" href="../css/confirmationDialog.css">
-  <link rel="stylesheet" href="../css/board.css" />
-  <link rel="stylesheet" href="../css/boardResponsive.css" />
-  <link rel="stylesheet" href="../css/open-task.css">
-  <link rel="stylesheet" href="../css/boardMobileButtons.css">
-  <link rel="stylesheet" href="../css/addTask-board.css" />
-  <link rel="stylesheet" href="../css/addtask-board-subtask.css">
-  <link rel="stylesheet" href="../css/addTask-board-responsive.css">
-  <link rel="stylesheet" href="../css/edit-task.css">
+  <link rel="icon" type="image/x-icon" href="/projects/join/assets/img/Logo for Favicon .png" />
+  <link rel="stylesheet" href="/projects/join/style.css" />
+  <link rel="stylesheet" href="/projects/join/styleResponsive.css">
+  <link rel="stylesheet" href="/projects/join/css/contacts.css" />
+  <link rel="stylesheet" href="/projects/join/css/confirmationDialog.css">
+  <link rel="stylesheet" href="/projects/join/css/board.css" />
+  <link rel="stylesheet" href="/projects/join/css/boardResponsive.css" />
+  <link rel="stylesheet" href="/projects/join/css/open-task.css">
+  <link rel="stylesheet" href="/projects/join/css/boardMobileButtons.css">
+  <link rel="stylesheet" href="/projects/join/css/addTask-board.css" />
+  <link rel="stylesheet" href="/projects/join/css/addtask-board-subtask.css">
+  <link rel="stylesheet" href="/projects/join/css/addTask-board-responsive.css">
+  <link rel="stylesheet" href="/projects/join/css/edit-task.css">
   <title>Task Board</title>
 </head>
 
@@ -37,14 +37,14 @@
             <div class="input-field-big">
               <input id="name-big" type="text" placeholder="Find Task" required oninput="filterTasks()" />
               <span class="input-icon">
-                <img src="../assets/img/icons/board/search.png" alt="Search Icon" />
+                <img src="/projects/join/assets/img/icons/board/search.png" alt="Search Icon" />
               </span>
             </div>
 
             <img onclick="openAddTaskModal('To-do')" id="headTaskButtonMobil"
-              src="../assets/img/icons/board/plus add task mobile.png" alt="Add Task" />
+              src="/projects/join/assets/img/icons/board/plus add task mobile.png" alt="Add Task" />
             <img onclick="openAddTaskModal('To-do')" id="headTaskButtonDesktop"
-              src="../assets/img/icons/board/plus add task desktop.png" alt="Add Task">
+              src="/projects/join/assets/img/icons/board/plus add task desktop.png" alt="Add Task">
 
           </div>
 
@@ -56,7 +56,7 @@
         <div class="input-group">
           <input id="name" type="text" placeholder="Find Task" required oninput="filterTasks()">
           <button type="button" class="input-icon">
-            <img src="../assets/img/icons/board/search.png" alt="Search Icon">
+            <img src="/projects/join/assets/img/icons/board/search.png" alt="Search Icon">
           </button>
         </div>
 
@@ -67,7 +67,7 @@
             <div class="todo-container">
               <h2>To do</h2>
               <img class="cursor-pointer" onclick="openAddTaskModal('To-do')"
-                src="../assets/img/icons/board/plus button mobile.png" alt="Add Task" />
+                src="/projects/join/assets/img/icons/board/plus button mobile.png" alt="Add Task" />
             </div>
             <div id="toDoTasks" class="task-container-filed" ondrop="moveTo('To-do')" ondragover="allowDrop(event)"
               ondragenter="highlight('toDoTasks')" ondragleave="removeHighlight('toDoTasks')">
@@ -79,7 +79,7 @@
             <div class="todo-container">
               <h2>In progress</h2>
               <img class="cursor-pointer" onclick="openAddTaskModal('In progress')"
-                src="../assets/img/icons/board/plus button mobile.png" alt="Add Task" />
+                src="/projects/join/assets/img/icons/board/plus button mobile.png" alt="Add Task" />
             </div>
             <div id="inProgressTasks" class="task-container-filed" ondrop="moveTo('In progress')"
               ondragover="allowDrop(event)" ondragenter="highlight('inProgressTasks')"
@@ -92,7 +92,7 @@
             <div class="todo-container">
               <h2>Awaiting feedback</h2>
               <img class="cursor-pointer" onclick="openAddTaskModal('Awaiting feedback')"
-                src="../assets/img/icons/board/plus button mobile.png" alt="Add Task" />
+                src="/projects/join/assets/img/icons/board/plus button mobile.png" alt="Add Task" />
             </div>
             <div id="awaitingFeedbackTasks" class="task-container-filed" ondrop="moveTo('Awaiting feedback')"
               ondragover="allowDrop(event)" ondragenter="highlight('awaitingFeedbackTasks')"
@@ -121,7 +121,7 @@
   <div onload="initAddTask()" id="overlaycontainer" class="overlay-container d-none">
     <div class="task-container">
       <div id="successMessage" class="success-message d-none">
-        <img src="../assets/img/add-task/Added to back log V1.svg" alt="Added to back log" />
+        <img src="/projects/join/assets/img/add-task/Added to back log V1.svg" alt="Added to back log" />
       </div>
       <h2 id="add_task_h1">Add Task</h2>
       <div class="task-content-wrapper" onclick="event.stopPropagation()">
@@ -142,7 +142,7 @@
             <div class="form-label">Assign to</div>
             <div class="dropdown-menu5" id="contact_dropdown_toggle_button" onclick="toggleContactDropdown()">
               Select contacts<img id="arrow_icon_contacts" class="dropdown-arrow-icon"
-                src="../assets/img/add-task/arrow_drop_down.svg" />
+                src="/projects/join/assets/img/add-task/arrow_drop_down.svg" />
             </div>
             <ul id="contact_dropdown" class="contact-list dropdown-list"></ul>
             <div id="assigned_contacts_container" class="assigned-contacts"></div>
@@ -212,7 +212,7 @@
               </div>
               <div class="dropdown-arrow">
                 <img id="category_arrow_icon_desktop" class="dropdown-arrow-icon"
-                  src="../assets/img/add-task/arrow_drop_down.svg" />
+                  src="/projects/join/assets/img/add-task/arrow_drop_down.svg" />
               </div>
             </div>
             <div>
@@ -228,14 +228,14 @@
               <div id="subtask_controls_desktop" class="subtask-controls">
                 <div id="subtask_action_wrapper_desktop" class="subtask-action-wrapper d-none">
                   <button onclick="clearSubtask()" class="check-subtask-button">
-                    <img id="subtask_cancel_desktop" class="cancel-subtask" src="../assets/img/add-task/close.svg" />
+                    <img id="subtask_cancel_desktop" class="cancel-subtask" src="/projects/join/assets/img/add-task/close.svg" />
                   </button>
                   <div class="subtask-divider"></div>
                   <button onclick="addSubtask()" id="checkSubtaskButton" class="check-subtask-button">
-                    <img id="subtask_check_desktop" class="check-subtask" src="../assets/img/add-task/checkBlack.svg" />
+                    <img id="subtask_check_desktop" class="check-subtask" src="/projects/join/assets/img/add-task/checkBlack.svg" />
                   </button>
                 </div>
-                <img id="subtask_add_icon_desktop" src="../assets/img/add-task/plus.svg" />
+                <img id="subtask_add_icon_desktop" src="/projects/join/assets/img/add-task/plus.svg" />
               </div>
             </div>
             <span id="errorMessageSubtaskInput" class="warning-message hiddenErrorSubtask">
@@ -262,7 +262,7 @@
           </button>
           <button id="checkTaskButtonBoard" onclick="checkValidationInBoard(event)" type="button"
             class="create-task-btn blue-button">
-            Create Task <img src="../assets/img/add-task/check.svg" alt="" />
+            Create Task <img src="/projects/join/assets/img/add-task/check.svg" alt="" />
           </button>
         </div>
         <button id="closeOverlay" class="close-button" onclick="closeAddTaskModal()">&times;
@@ -290,18 +290,18 @@
     </div>
   </div>
   <!-- Javascript -->
-  <script src="../assets/templates/taskEditTemplats.js"></script>
-  <script src="../scripts/taskEdit.js"></script>
-  <script src="../scripts/auxiliaryFunction.js"></script>
-  <script src="../scripts/database.js"></script>
-  <script src="../assets/templates/boardtemplats.js"></script>
-  <script src="../scripts/board.js"></script>
-  <script src="../scripts/componentLoader.js"></script>
-  <script src="../script.js"></script>
-  <script src="../scripts/addTask-board.js"></script>
-  <script src="../scripts/ValidateTask.js"></script>
-  <script src="../scripts/subtask.js"></script>
-  <script src="../scripts/dragAndDrop.js"></script>
+  <script src="/projects/join/assets/templates/taskEditTemplats.js"></script>
+  <script src="/projects/join/scripts/taskEdit.js"></script>
+  <script src="/projects/join/scripts/auxiliaryFunction.js"></script>
+  <script src="/projects/join/scripts/database.js"></script>
+  <script src="/projects/join/assets/templates/boardtemplats.js"></script>
+  <script src="/projects/join/scripts/board.js"></script>
+  <script src="/projects/join/scripts/componentLoader.js"></script>
+  <script src="/projects/join/script.js"></script>
+  <script src="/projects/join/scripts/addTask-board.js"></script>
+  <script src="/projects/join/scripts/ValidateTask.js"></script>
+  <script src="/projects/join/scripts/subtask.js"></script>
+  <script src="/projects/join/scripts/dragAndDrop.js"></script>
   <!-- <a href="https://www.flaticon.com/free-icons/delete" title="delete icons">Delete icons created by Ilham Fitrotul Hayat - Flaticon</a> -->
   <!-- <a href="https://www.flaticon.com/free-icons/pencil" title="pencil icons">Pencil icons created by Pixel perfect - Flaticon</a> -->
 </body>

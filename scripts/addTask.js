@@ -115,7 +115,7 @@ async function createTask(event, hasErrors) {
     
     await uploadTasksToAPI(title, description, dueDate, category, priority, subtasks, assignedto);
     await showSuccessMessage(3000);
-    window.location.href = "board.html";
+    window.location.href = "/projects/join/htmls/board.html";
   }
 }
 
@@ -390,6 +390,3 @@ function attachClickHandlers() {
         }
     });
 }
-
-
-

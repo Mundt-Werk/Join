@@ -7,27 +7,33 @@
     <link
       rel="icon"
       type="image/x-icon"
-      href="/assets/img/Logo for Favicon .png"
+      href="/projects/join/assets/img/Logo for Favicon .png"
     />
-    <link rel="stylesheet" href="../css/index.css" />
-    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="/projects/join/css/index.css" />
+    <link rel="stylesheet" href="/projects/join/style.css" />
 
     <link
       rel="shortcut icon"
-      href="assets/img/Logo for Favicon .png"
+      href="/projects/join/assets/img/Logo for Favicon .png"
       type="image/x-icon"
     />
   </head>
 
   <body onload="initLogin(); changeLogoImage(); loadLoginData(); loadUserAPI()">
     <div id="first-screen" class="first-screen">
-     <img id="logo" src="assets/img/LogoWeiß.png" alt="">
+      <img id="logo" src="/projects/join/assets/img/LogoWeiß.png" alt="" />
     </div>
     <header id="header-index" class="header-index">
-      <img class="header-img" src="assets/img/Logo for Favicon .png" alt="" />
+      <img
+        class="header-img"
+        src="/projects/join/assets/img/Logo for Favicon .png"
+        alt=""
+      />
       <div class="signup-container-header not-user-span">
         <span>Not a Join user?</span>
-        <button class="blue-button cursor-pointer" onclick="redirectToSignUp()">Sign up</button>
+        <button class="blue-button cursor-pointer" onclick="redirectToSignUp()">
+          Sign up
+        </button>
       </div>
     </header>
 
@@ -37,12 +43,21 @@
           <h1>Log in</h1>
           <div class="blue-line"></div>
         </div>
-        <div class="form-container ">
+        <div class="form-container">
           <form class="input-container" onsubmit="validateLogin(event)">
             <div class="input-group">
-              <input required id="email" class="input cursor-pointer" type="email" placeholder="Email" />
+              <input
+                required
+                id="email"
+                class="input cursor-pointer"
+                type="email"
+                placeholder="Email"
+              />
               <span class="input-icon" onclick="fillEmail()">
-                <img src="../assets/img/icons/mail.png" alt="E-Mail Icon" />
+                <img
+                  src="/projects/join/assets/img/icons/mail.png"
+                  alt="E-Mail Icon"
+                />
               </span>
             </div>
             <div class="input-group">
@@ -54,7 +69,11 @@
                 placeholder="Password"
               />
               <span onclick="showPassword3()" class="input-icon cursor-pointer">
-                <img id="lock-img" src="../assets/img/icons/lock.png" alt="" />
+                <img
+                  id="lock-img"
+                  src="/projects/join/assets/img/icons/lock.png"
+                  alt=""
+                />
               </span>
             </div>
             <div id="generalErrorMessage">
@@ -66,13 +85,23 @@
                 type="checkbox"
                 name="remember"
                 id="remember"
-                onclick="saveLoginData()" 
+                onclick="saveLoginData()"
               />
               <label for="remember">Remember me</label>
             </div>
             <div class="button-container">
-              <button id="loginButton" class="blue-button cursor-pointer" onclick="validateLogin(event)">Log in</button>
-              <button type="button" onclick="redirectToSummaryGuest()" class="white-button cursor-pointer">
+              <button
+                id="loginButton"
+                class="blue-button cursor-pointer"
+                onclick="validateLogin(event)"
+              >
+                Log in
+              </button>
+              <button
+                type="button"
+                onclick="redirectToSummaryGuest()"
+                class="white-button cursor-pointer"
+              >
                 Guest Log in
               </button>
             </div>
@@ -82,17 +111,23 @@
     </div>
     <div id="signup-container" class="signup-container not-user-span">
       <span>Not a Join user?</span>
-      <button class="signup-button cursor-pointer" onclick="redirectToSignUp()">Sign up</button>
+      <button class="signup-button cursor-pointer" onclick="redirectToSignUp()">
+        Sign up
+      </button>
     </div>
     <div id="links-container" class="links-container">
-      <a class="blue-link" href="htmls/privacyPoliceLogIn.html">Privacy Policy</a>
-      <a class="blue-link" href="htmls/legalNoticeLogIn.html"> Legal notice</a>
+      <a class="blue-link" href="/projects/join/htmls/privacyPoliceLogIn.html"
+        >Privacy Policy</a
+      >
+      <a class="blue-link" href="/projects/join/htmls/legalNoticeLogIn.html">
+        Legal notice</a
+      >
     </div>
 
-    <script src="../scripts/index.js"></script>
-    <script src="../script.js"></script>
-    <script src="/scripts/database.js"></script>
-    <script src="/scripts/user.js"></script>
-    <script src="/scripts/singup.js"></script>
+    <script src="/projects/join/scripts/index.js"></script>
+    <script src="/projects/join/script.js"></script>
+    <script src="/projects/join/scripts/database.js"></script>
+    <script src="/projects/join/scripts/user.js"></script>
+    <script src="/projects/join/scripts/singup.js"></script>
   </body>
 </html>

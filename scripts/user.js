@@ -14,7 +14,7 @@ async function registerUser() {
 
   showConfirmationModal();
   setTimeout(() => {
-      window.location.href = "../index.html";
+      window.location.href = "/projects/join/index.html";
   }, 2000);
 }
 

@@ -1,4 +1,3 @@
-
 document
   .getElementById("subtask_input_desktop")
   .addEventListener("input", function (event) {
@@ -94,8 +93,8 @@ function toggleEditMode(subtaskContent, editInput) {
     subtaskContent.classList.add("d-none");
   }
 
-  document.getElementById("editTrash").src = '../assets/img/add-task/delete.svg';
-  document.getElementById("trashSubmit").src = '../assets/img/add-task/checkBlack.svg';
+  document.getElementById("editTrash").src = '/projects/join/assets/img/add-task/delete.svg';
+  document.getElementById("trashSubmit").src = '/projects/join/assets/img/add-task/checkBlack.svg';
   
   editInput.addEventListener("input", function () {
     validateInputLength(editInput);
@@ -220,9 +219,9 @@ function toggleEditState(listItem, subtaskContent, editInput, editBtn, deleteBtn
 
     
     editBtn.innerHTML =
-      '<img id="editTrash" src="../assets/img/add-task/checkBlack.svg" alt="Check">';
+      '<img id="editTrash" src="/projects/join/assets/img/add-task/checkBlack.svg" alt="Check">';
     deleteBtn.innerHTML =
-      '<img id="trashSubmit" src="../assets/img/add-task/delete.svg" alt="Delete">';
+      '<img id="trashSubmit" src="/projects/join/assets/img/add-task/delete.svg" alt="Delete">';
     
     
     const buttonsContainer = listItem.querySelector(".subtask-buttons");
@@ -242,9 +241,9 @@ function toggleEditState(listItem, subtaskContent, editInput, editBtn, deleteBtn
 
   
     editBtn.innerHTML =
-      '<img id="editTrash" src="../assets/img/add-task/edit_dark.svg" alt="Edit">';
+      '<img id="editTrash" src="/projects/join/assets/img/add-task/edit_dark.svg" alt="Edit">';
     deleteBtn.innerHTML =
-      '<img id="trashSubmit" src="../assets/img/add-task/delete.svg" alt="Delete">';
+      '<img id="trashSubmit" src="/projects/join/assets/img/add-task/delete.svg" alt="Delete">';
 
     
     const buttonsContainer = listItem.querySelector(".subtask-buttons");
@@ -252,5 +251,3 @@ function toggleEditState(listItem, subtaskContent, editInput, editBtn, deleteBtn
     buttonsContainer.insertBefore(editBtn, deleteBtn); 
   }
 }
-
-

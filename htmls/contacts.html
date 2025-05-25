@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacts</title>
-    <link rel="icon" type="image/x-icon" href="/assets/img/Logo for Favicon .png">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="../styleResponsive.css">
-    <link rel="stylesheet" href="../css/confirmationDialog.css">
-    <link rel="stylesheet" href="../css/contactsModal.css">
-    <link rel="stylesheet" href="../css/contacts.css">
-    <link rel="stylesheet" href="../css/contactsResponsive.css">    
+    <link rel="icon" type="image/x-icon" href="/projects/join/assets/img/Logo for Favicon .png">
+    <link rel="stylesheet" href="/projects/join/style.css">
+    <link rel="stylesheet" href="/projects/join/styleResponsive.css">
+    <link rel="stylesheet" href="/projects/join/css/confirmationDialog.css">
+    <link rel="stylesheet" href="/projects/join/css/contactsModal.css">
+    <link rel="stylesheet" href="/projects/join/css/contacts.css">
+    <link rel="stylesheet" href="/projects/join/css/contactsResponsive.css">    
 </head>
 <body onload="loadContacts()">
     <div class="container">
@@ -21,7 +21,7 @@
                 <div class="contact-container">
                     <div class="button-big">
                         <button onclick="openAddContact()" class="blue-button" id="new-contact-btn">
-                            Add new contact <img src="../assets/img/icons/contacts/person_add.png" alt="Menu Icon">
+                            Add new contact <img src="/projects/join/assets/img/icons/contacts/person_add.png" alt="Menu Icon">
                         </button>
                     </div>                    
                     <div class="contacts-list" id="contacts-list"></div>
@@ -31,7 +31,7 @@
                         <div class="contact-info-container-headline">
                             <h1>Contacts</h1>
                             <button onclick="hideContactDetailsSmart()">
-                                <img src="../assets/img/icons/arrow-left-line.png" alt="Zurück">
+                                <img src="/projects/join/assets/img/icons/arrow-left-line.png" alt="Zurück">
                             </button>
                         </div>
                         
@@ -45,10 +45,10 @@
                                 <h2 id="contact-name">Name</h2>
                                 <div class="name-and-edit-buttons">
                                     <button class="edit-contact-btn" aria-label="Edit Contact" onclick="editContact()">
-                                        <img src="../assets/img/icons/contacts/edit contacts.png" alt="Edit">
+                                        <img src="/projects/join/assets/img/icons/contacts/edit contacts.png" alt="Edit">
                                     </button>
                                     <button class="delete-contact-btn" aria-label="Delete Contact" onclick="openConfirmationModal()">
-                                        <img src="../assets/img/icons/contacts/Delete contact.png" alt="Delete">
+                                        <img src="/projects/join/assets/img/icons/contacts/Delete contact.png" alt="Delete">
                                     </button>
                                 </div>
                             </div>
@@ -67,19 +67,19 @@
                     </div>
                 </div>
                 <div class="fixed-button" id="menu-button" onclick="openAddContact()">
-                    <img src="../assets/img/icons/contacts/person_add.png" alt="Menu Icon">
+                    <img src="/projects/join/assets/img/icons/contacts/person_add.png" alt="Menu Icon">
                 </div>
                 <div class="fixed-button hidden" id="smart-edit-button" onclick="openEditContactMenu()">
-                    <img src="../assets/img/icons/contacts/more_vert.png" alt="Menu Icon">
+                    <img src="/projects/join/assets/img/icons/contacts/more_vert.png" alt="Menu Icon">
                 </div>
                 <div id="editButtonMenu" class="smart-edit-button-menu hidden">
                     <div class="smart-edit-button-menu-container">
                         <div class="name-and-edit-buttons">
                             <button class="edit-contact-btn" aria-label="Edit Contact" onclick="editContact()">
-                                <img src="../assets/img/icons/contacts/edit contacts.png" alt="Edit">
+                                <img src="/projects/join/assets/img/icons/contacts/edit contacts.png" alt="Edit">
                             </button>
                             <button class="delete-contact-btn" aria-label="Delete Contact" onclick="openConfirmationModal()">
-                                <img src="../assets/img/icons/contacts/Delete contact.png" alt="Delete">
+                                <img src="/projects/join/assets/img/icons/contacts/Delete contact.png" alt="Delete">
                             </button>
                         </div>
                     </div>
@@ -88,14 +88,14 @@
                     <div class="modal-content">
                         <span class="close-button" id="close-modal" onclick="closeModalFunction()">&times;</span>
                         <div class="modal-head">
-                            <img src="../assets/img/icons/contacts/modal-profile-picture.png" alt="">
+                            <img src="/projects/join/assets/img/icons/contacts/modal-profile-picture.png" alt="">
                             <h2 id="modal-title">Add contact</h2>
                             <p>Tasks are better with a team!</p>
                             <div class="blue-line-modal"></div>
                         </div>
                         <div class="contact-avatar">
                             <div class="avatar-container">
-                                <img src="../assets/img/icons/contacts/person.png" alt="Contact Avatar">
+                                <img src="/projects/join/assets/img/icons/contacts/person.png" alt="Contact Avatar">
                             </div>
                         </div>
                         <div class="modal-bottom">
@@ -103,7 +103,7 @@
                                 <div class="input-group">
                                     <input id="name" type="text" placeholder="Name" required>
                                     <span class="input-icon">
-                                        <img src="../assets/img/icons/contacts/person_grey.png" alt="Name Icon">
+                                        <img src="/projects/join/assets/img/icons/contacts/person_grey.png" alt="Name Icon">
                                     </span>
                                 </div>
                                 <div id="wrongNameMessage">
@@ -112,7 +112,7 @@
                                 <div class="input-group">
                                     <input id="email" type="email" placeholder="Email" required>
                                     <span class="input-icon">
-                                        <img src="../assets/img/icons/contacts/mail.png" alt="Email Icon">
+                                        <img src="/projects/join/assets/img/icons/contacts/mail.png" alt="Email Icon">
                                     </span>
                                 </div>
                                 <div id="wrongMailMessage">
@@ -122,7 +122,7 @@
                                 <div class="input-group">
                                     <input id="phone" type="tel" placeholder="Phone">
                                     <span class="input-icon">
-                                        <img src="../assets/img/icons/contacts/call.png" alt="Phone Icon">
+                                        <img src="/projects/join/assets/img/icons/contacts/call.png" alt="Phone Icon">
                                     </span>
                                 </div>
                                 <div id="wrongNumberMessage">
@@ -141,7 +141,7 @@
                                         Delete
                                     </button>
                                     <button class="save-button" type="button" onclick="openConfirmationModal2()">
-                                        Save <img src="../assets/img/icons/contacts/check_white.png" alt="Save">
+                                        Save <img src="/projects/join/assets/img/icons/contacts/check_white.png" alt="Save">
                                     </button>                                    
                                 </div>
                             </form>
@@ -197,12 +197,12 @@
             </div> 
         </div>
     </div>
-    <script src="../scripts/auxiliaryFunction.js"></script>
-    <script src="../scripts/contact.js"></script>
-    <script src="../scripts/contactEdits.js"></script>
-    <script src="../scripts/contactValidation.js"></script>    
-    <script src="../script.js"></script>
-    <script src="../scripts/componentLoader.js"></script>
-    <script src="../scripts/firebaseContacts.js"></script>
+    <script src="/projects/join/scripts/auxiliaryFunction.js"></script>
+    <script src="/projects/join/scripts/contact.js"></script>
+    <script src="/projects/join/scripts/contactEdits.js"></script>
+    <script src="/projects/join/scripts/contactValidation.js"></script>    
+    <script src="/projects/join/script.js"></script>
+    <script src="/projects/join/scripts/componentLoader.js"></script>
+    <script src="/projects/join/scripts/firebaseContacts.js"></script>
 </body>
 </html>

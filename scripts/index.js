@@ -29,8 +29,8 @@ function initLogin() {
 function changeLogoImage() {
   let logo = document.getElementById('logo');
   logo.src = window.innerWidth >= 500 
-    ? 'assets/img/LogoBlau.png' 
-    : 'assets/img/LogoWeiß.png';
+    ? '/projects/join/assets/img/LogoBlau.png' 
+    : '/projects/join/assets/img/LogoWeiß.png';
 }
 
 /**
@@ -43,10 +43,10 @@ function showPassword3() {
   if (input && lockImg) {
     if (input.type === "password") {
       input.type = "text";
-      lockImg.src = "../assets/img/icons/visibility.png";
+      lockImg.src = "/projects/join/assets/img/icons/visibility.png";
     } else {
       input.type = "password";
-      lockImg.src = "../assets/img/icons/visibility_off.png";
+      lockImg.src = "/projects/join/assets/img/icons/visibility_off.png";
     }
   }
 }
@@ -55,14 +55,14 @@ function showPassword3() {
  * Redirects the user to the signup page.
  */
 function redirectToSignUp() {
-  window.location.href = "../htmls/singUp.html";
+  window.location.href = "/projects/join/htmls/singUp.html";
 }
 
 /**
  * Redirects the user to the summary page for guests.
  */
 function redirectToSummaryGuest() {
-  window.location.href = "../htmls/summary-guest.html"
+  window.location.href = "/projects/join/htmls/summary-guest.html"
 }
 
 /**
@@ -71,7 +71,7 @@ function redirectToSummaryGuest() {
  */
 function redirectToSummary(event) {
   event.preventDefault();
-  window.location.href = "../htmls/summary.html";
+  window.location.href = "/projects/join/htmls/summary.html";
 }
 
 /**
@@ -85,7 +85,7 @@ function fillEmail() {
   if (emailInput && passwordInput && lockImg) {
     emailInput.value = "Join375@gmail.com";
     passwordInput.value = "TeamJoin375";
-    lockImg.src = "../assets/img/icons/visibility_off.png";
+    lockImg.src = "/projects/join/assets/img/icons/visibility_off.png";
   }
 }
 
@@ -110,7 +110,7 @@ function saveLoginData() {
  * Loads the saved email and password from localStorage and populates the input fields.
  */
 function loadLoginData() {
-  let savedEmail = localStorage.getItem("savedEmail");
+  let savedEmail = localStorage.getItem("savedEmail");  
   let savedPassword = localStorage.getItem("savedPassword");
 
   if (savedEmail && savedPassword) {

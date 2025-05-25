@@ -173,7 +173,7 @@ async function createTaskInBoard(event, hasErrors) {
     
     await uploadTasksToAPI(title, description, dueDate, category, priority, subtasks, currentTaskStatus, assignedto);
     await showSuccessMessage(3000);
-    window.location.href = "board.html";
+    window.location.href = "/projects/join/htmls/board.html";
   }
 }
 
@@ -366,4 +366,3 @@ function attachClickHandlers() {
         }
     });
 }
-

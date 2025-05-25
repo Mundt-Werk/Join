@@ -1,3 +1,5 @@
 .env
 firebase-config.js
 node_modules/
+firebaseContacts.js
+auxiliaryFunction.js

@@ -4,20 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Join</title>
-    <link rel="icon" type="image/x-icon" href="../assets/img/Logo for Favicon .png" />
-    <link rel="stylesheet" href="../css/singup.css" />
-    <link rel="stylesheet" href="../style.css" />
-    <link rel="stylesheet" href="../styleResponsive.css" />
-    <link rel="stylesheet" href="../css/confirmationDialog.css">
-    <script src="../scripts/database.js"></script>
-    <script src="../scripts/user.js"></script>
-    <script src="../scripts/singup.js" defer></script>
-    <link rel="shortcut icon" href="../assets/img/Logo for Favicon .png" type="image/x-icon" />
+    <link rel="icon" type="image/x-icon" href="/projects/join/assets/img/Logo for Favicon .png" />
+    <link rel="stylesheet" href="/projects/join/css/singup.css" />
+    <link rel="stylesheet" href="/projects/join/style.css" />
+    <link rel="stylesheet" href="/projects/join/styleResponsive.css" />
+    <link rel="stylesheet" href="/projects/join/css/confirmationDialog.css">
+    <script src="/projects/join/scripts/database.js"></script>
+    <script src="/projects/join/scripts/user.js"></script>
+    <script src="/projects/join/scripts/singup.js" defer></script>
+    <link rel="shortcut icon" href="/projects/join/assets/img/Logo for Favicon .png" type="image/x-icon" />
   </head>
 
   <body onload="initSignUp()">
     <header class="header-index">
-      <img class="header-img" src="/assets/img/Logo for Favicon .png" alt="Logo" />
+      <img class="header-img" src="/projects/join/assets/img/Logo for Favicon .png" alt="Logo" />
     </header>
     <div class="login-container-area">
       <section class="login-container">
@@ -25,7 +25,7 @@
           <img
             onclick="redirectToLogIn()"
             class="cursor-pointer"
-            src="/assets/img/icons/arrow-left-line.png"
+            src="/projects/join/assets/img/icons/arrow-left-line.png"
             alt="Back to Login"
           />
           <div class="headline">
@@ -45,7 +45,7 @@
               oninput="validateName()" 
             />
             <span class="input-icon" onclick="autofillFields()">
-              <img src="../assets/img/icons/contacts/person2.png" alt="Autofill" />
+              <img src="/projects/join/assets/img/icons/contacts/person2.png" alt="Autofill" />
             </span>
           </div>
           <div id="wrongNameMessage" style="display: none;">
@@ -63,7 +63,7 @@
               oninput="validateEmailField()"
             />
             <span class="input-icon" onclick="autofillFields()">
-              <img src="../assets/img/icons/mail.png" alt="Autofill" />
+              <img src="/projects/join/assets/img/icons/mail.png" alt="Autofill" />
             </span>
           </div>
           <div id="wrongMailMessage" style="display: none;">
@@ -81,7 +81,7 @@
               oninput="validatePasswordField()"
             />
             <span onclick="showPassword()" class="input-icon cursor-pointer">
-              <img id="lock-img-1" src="../assets/img/icons/lock.png" alt="Show Password" />
+              <img id="lock-img-1" src="/projects/join/assets/img/icons/lock.png" alt="Show Password" />
             </span>
           </div>
           <div id="wrongPasswortMessage" style="display: none;">
@@ -99,7 +99,7 @@
               oninput="validateConfirmPasswordField()"
             />
             <span onclick="showPassword2()" class="input-icon cursor-pointer">
-              <img id="lock-img-2" src="../assets/img/icons/lock.png" alt="Show Password" />
+              <img id="lock-img-2" src="/projects/join/assets/img/icons/lock.png" alt="Show Password" />
             </span>
           </div>
           <div id="password-dont-match" style="display: none;">
@@ -116,7 +116,7 @@
               />
               <label for="remember">
                 <span>I accept the</span>
-                <a class="decoration-none" href="privacyPoliceSignIn.html">Privacy policy</a>
+                <a class="decoration-none" href="/projects/join/htmls/privacyPoliceSignIn.html">Privacy policy</a>
                 <span class="red">*</span>
               </label>
             </div>
@@ -161,8 +161,8 @@
       </div>
     </div>
     <div class="links-container">
-      <a class="blue-link" href="privacyPoliceSignIn.html">Privacy Policy</a>
-      <a class="blue-link" href="legalNoticeSignIn.html">Legal notice</a>
+      <a class="blue-link" href="/projects/join/htmls/privacyPoliceSignIn.html">Privacy Policy</a>
+      <a class="blue-link" href="/projects/join/htmls/legalNoticeSignIn.html">Legal notice</a>
     </div>
   </body>
 </html>

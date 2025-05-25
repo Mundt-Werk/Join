@@ -6,8 +6,8 @@
 }
 
 @font-face {
-    font-family: 'inter';
-    src: url(../assets/font/inter/Inter-VariableFont_slnt,wght.ttf);
+    font-family: 'Inter';
+    src: url('/projects/join/assets/font/inter/Inter-VariableFont_slnt,wght.ttf') format('truetype');
 }
 
 :root {

@@ -36,10 +36,10 @@ function showPassword() {
   let lockImg = document.getElementById("lock-img-1");
   if (input.type === "password") {
     input.type = "text";
-    lockImg.src = "../assets/img/icons/visibility.png";
+    lockImg.src = "/projects/join/assets/img/icons/visibility.png";
   } else {
     input.type = "password";
-    lockImg.src = "../assets/img/icons/visibility_off.png";
+    lockImg.src = "/projects/join/assets/img/icons/visibility_off.png";
   }
 }
 
@@ -51,10 +51,10 @@ function showPassword2() {
   let lockImg = document.getElementById("lock-img-2");
   if (input.type === "password") {
     input.type = "text";
-    lockImg.src = "../assets/img/icons/visibility.png";
+    lockImg.src = "/projects/join/assets/img/icons/visibility.png";
   } else {
     input.type = "password";
-    lockImg.src = "../assets/img/icons/visibility_off.png";
+    lockImg.src = "/projects/join/assets/img/icons/visibility_off.png";
   }
 }
 
@@ -148,7 +148,7 @@ function validateForm() {
  * Redirects the user to the login page.
  */
 function redirectToLogIn() {
-  window.location.href = "../index.html";
+  window.location.href = "/projects/join/index.html";
 }
 
 /**

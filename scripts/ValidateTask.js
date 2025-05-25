@@ -84,7 +84,7 @@ function createSubtaskButtons(listItem, subtaskContent, editInput, subtaskButton
   const editBtn = document.createElement("button");
   editBtn.className = "subtask-edit-btn";
   editBtn.innerHTML =
-    '<img id="editTrash" src="../assets/img/add-task/edit_dark.svg" alt="Edit">';
+    '<img id="editTrash" src="/projects/join/assets/img/add-task/edit_dark.svg" alt="Edit">';
   editBtn.onclick = function () {
     toggleEditState(listItem, subtaskContent, editInput, editBtn, deleteBtn);
   };
@@ -92,7 +92,7 @@ function createSubtaskButtons(listItem, subtaskContent, editInput, subtaskButton
   const deleteBtn = document.createElement("button");
   deleteBtn.className = "subtask-delete-btn";
   deleteBtn.innerHTML =
-    '<img id="trashSubmit" src="../assets/img/add-task/delete.svg" alt="Delete">';
+    '<img id="trashSubmit" src="/projects/join/assets/img/add-task/delete.svg" alt="Delete">';
   deleteBtn.onclick = function () {
     listItem.remove();
     inputSubtask = "";
