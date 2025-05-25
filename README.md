@@ -26,7 +26,7 @@ Ein voll funktionsfähiges Projektmanagement-Tool im Kanban-Stil mit Firebase-In
 
 ## 📸 Vorschau
 
-![Join Screenshot](../../marco-mundt-portfolio/public/04_projects/portfolio.png)
+![Join Screenshot](img/join.png)
 
 ---
 
